@@ -1,0 +1,63 @@
+.m-select-custom {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-right: 10px;
+    background-color: #ffffff;
+    border-radius: 2.625px;
+    border: 1px solid #afafaf;
+    width: 59px;
+    height: 25px;
+}
+
+.m-select-custom:hover {
+    background-color: #bebebe4d;
+}
+
+.m-select-custom .m-select-custom-title {
+    width: 59px;
+    box-sizing: border-box;
+    background-image: url(../../../assets/icon/down-arrow-solid.png);
+    background-size: 9px 9px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    font-size: 11px;
+    padding: 7px 0px;
+    outline: none;
+}
+
+.m-select-custom .m-select-custom-data {
+    display: flex;
+    width: 100%;
+    bottom: 35px;
+    right: 1px;
+    flex-direction: column;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 3px;
+    z-index: 999;
+}
+
+.m-select-custom .m-select-custom-data .m-select-custom-item{
+    display: inline-block;
+    padding: 5px 5px;
+    font-size: 13px;
+    font-family: MISA GoogleSansLight;
+    height: 20px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: 1px 0px solid;
+}
+
+.m-select-custom .m-select-custom-data .m-select-custom-selected {
+    background-color: rgba(26, 164, 200, .2) !important;
+}
+
+.m-select-custom .m-select-custom-data .m-select-custom-item:hover {
+    background-color: rgba(26, 165, 200, 0.384);
+}

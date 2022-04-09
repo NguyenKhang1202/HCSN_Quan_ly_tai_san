@@ -1,0 +1,23 @@
+/* .dropdown {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 200px;
+    border-radius: 4px;
+    border: 1px solid #bbbbbb;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e9d8f4;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  } */
+  

@@ -1,0 +1,119 @@
+.table {
+  /* giúp bỏ khoảng trống giữa border */
+  border-collapse: collapse;
+  width: 100%;
+  height: calc(100vh - 200px);
+  position: relative;
+}
+
+.table thead tr {
+  height: 42px;
+}
+.table th,
+td {
+  text-align: left;
+}
+.table tbody tr td,
+.table thead tr th {
+  padding: 0 10px;
+  white-space: nowrap;
+}
+.table tbody tr,
+td {
+  border-top: 1px solid #e9ebee;
+  height: 42px;
+  text-align: left;
+  padding: 10px 16px;
+}
+.table tbody tr td:first-child {
+  padding: 0 10px;
+}
+.table tbody tr td {
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  overflow: hidden;
+}
+
+
+.table tr td:first-child,
+th:first-child {
+  width: 50px;
+  text-align: center;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ebee;
+}
+.table th {
+  background-color: white;
+  border-bottom: 1px solid #e9ebee;
+  height: 50px;
+}
+.table tbody {
+  height: calc(100% - 60px);
+  display: block;
+  /* overflow: auto; */
+  margin-right: -8px;
+}
+/* tr:nth-child(odd) {
+        background-color: #EBF9F4;
+    } */
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 1px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(187, 187, 187);
+  border-radius: 1px;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+        
+    } */
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* even columns width , fix width of table too */
+  margin-right: 10px;
+  height: 40px;
+}
+
+.text-align-right {
+  text-align: right;
+}
+.text-align-center {
+  text-align: center !important;
+}
+.selectedRow {
+  background-color: #ebf9f4;
+}
+tbody tr {
+  vertical-align: middle;
+}
+
+table.table tbody tr .action {
+  opacity: 0;
+}
+.feature {
+  z-index: 1;
+}
+table.table tbody tr:hover .action {
+  opacity: 1;
+  text-align: center;
+  line-height: 42px;
+}
+
+table.table tr:hover .action {
+  display: block;
+}

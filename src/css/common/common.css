@@ -1,0 +1,23 @@
+.text-align-center, .align-center {
+    text-align: center !important;
+}
+
+.text-align-left, .align-left {
+    text-align: left !important;
+}
+
+.text-align-right, .align-right {
+    text-align: right !important;
+}
+
+
+
+.requiredVal {
+    border: 1px solid red !important;
+}
+
+ 
+.notValidControl {
+    border: 1px solid red !important;
+    border-radius: 4px;
+}

@@ -1,0 +1,98 @@
+.nav-bar {
+    background-color: #1c3048;
+    width: 225px;
+    float: left;
+    height: 100vh;
+    color: white !important;
+    border-right: 1px solid #e9ebee;
+    padding: 11px;
+}
+    /* logo */
+    .nav-bar .logo-box {
+        display: flex;
+        height: 50px;
+        padding: 0 4px 4px 4px;
+        margin-bottom: 15px;
+    }
+        /* logo icon */
+        .logo-box .toggle {
+            height: 36px;
+            width: 36px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        /* text cho logo */
+        .logo-box .logo-page {
+            font-size: 24px;
+            margin-left: 12px;
+            line-height: 1.5em;
+            font-weight: 700;
+        }
+
+    /* menu */
+    .nav-bar .navbar-box {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 87px);
+    }
+        /* item <=> row */
+        .navbar-box .menu-item {
+            display: flex;
+            height : 40px;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+        .navbar-box .menu-item:hover {
+            background-color: #1aa5c85d;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+            /* icon trong row */
+            .menu-item .wrap-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                width: 44px;
+            }
+            .menu-item .menu-item-icon {
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 24px;
+                width: 24px;
+            }
+
+            .m-collapse-toggle {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                bottom: 8px;
+                right: 0px;
+                width: 24px;
+                height: 24px;
+                font-size: 24px;
+                color: #fff;
+                background-color: #b8c7d6;
+                cursor: pointer;
+            }
+            .navbar-box.toggle {
+                /* width: 60px; */
+            }
+            .navbar-box.toggle .toggled {
+                transform: rotate(180deg);
+            }
+
+            .router-link-active, .router-link-active:hover {
+                background-color: #1aa4c8 !important;
+                color: white !important;
+                cursor: pointer;
+                transition: all 0.1s ease;
+            }
+            .navbar-box a {
+                color: white !important;
+            }

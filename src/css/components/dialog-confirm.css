@@ -1,0 +1,64 @@
+.m-dialog-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.24);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1005;
+    box-sizing: content-box;
+}
+
+.m-dialog {
+    position: absolute;
+    width: 350px;
+    height: 167px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    box-sizing: content-box;
+    transition: all 0.3s ease;
+}
+
+.m-dialog .m-dialog-header {
+    padding: 16px;
+    font-weight: 700;
+    box-sizing: content-box;
+
+}
+
+.m-dialog .m-dialog-body {
+    padding: 16px;
+    box-sizing: content-box;
+    font-size: 14px;
+}
+
+.m-dialog .m-dialog-footer {
+    display: flex;
+    padding: 8px;
+    background-color: #F4F4F4;
+    border-radius: 4px;
+    justify-content: end;
+    align-items: center;
+    box-sizing: content-box;
+    margin-top: 16px;
+}
+
+.m-btn-ok {
+    margin: 0 12px;
+}
+
+.m-dialog-box.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.visible .m-dialog{
+    transform: translate(-50%, -50%) scale(1);
+    box-sizing: content-box;
+    transition: all 0.3s ease;
+}

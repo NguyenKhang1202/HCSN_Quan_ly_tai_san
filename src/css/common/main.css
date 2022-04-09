@@ -1,0 +1,40 @@
+@import url(../components/font.css);
+@import url(../components/input.css);
+@import url(../components/table.css);
+@import url(../components/button.css);
+@import url(../components/combobox.css);
+@import url(../components/dropdown.css);
+@import url(../components/select.css);
+@import url(../components/icon.css);
+@import url(../components/loading.css);
+@import url(../components/tooltips.css);
+@import url(../components/toast-message.css);
+@import url(../components/dialog-confirm.css);
+@import url(../components/dialog.css);
+@import url(../components/checkbox.css);
+@import url(../common/common.css);
+
+
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: GoogleSans-Regular; */
+    font-family: Roboto-Regular;
+    font-size: 13px;
+}
+
+.select {
+    width: 200px;
+    height: 40px;
+    border: 1px solid #BBBBBB !important;
+    border-radius: 4px;
+    padding: 0 16px;
+}
+
+.select:focus-visible {
+    border-color: #BBBBBB !important; 
+}

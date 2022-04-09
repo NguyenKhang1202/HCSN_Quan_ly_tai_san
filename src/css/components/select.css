@@ -1,0 +1,26 @@
+    /* thẻ select */
+select {
+    box-shadow: none;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    background-image: none;
+    flex: 1;
+    padding: 0 0.5em;
+    cursor: pointer;
+    padding: 0 12px 0 16px;
+}
+
+    /* thẻ div chứa thẻ select */
+.select {
+    position: relative;
+    display: flex;
+    width: 200px;
+    height: 40px;
+    line-height: 38px;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: GoogleSans-Regular;
+}
+
+

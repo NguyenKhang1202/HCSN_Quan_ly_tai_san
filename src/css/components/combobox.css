@@ -1,0 +1,98 @@
+.combobox {
+    outline: none;
+    border: 1px solid #bbbbbb;
+    cursor: pointer;
+    height: 40px;
+    width: 200px;
+    border-radius: 4px;
+    display: flex;
+    position: relative;
+}
+.combobox:focus{
+    border-color: #019160;
+}
+
+.m-combobox {
+    position: relative;
+    height: 42px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+}
+
+.m-combobox input {
+    width: 100%;
+    flex-shrink: 1;
+    padding-right: 50px;
+    text-overflow: ellipsis;
+}
+
+.m-combobox button.m-combobox-button {
+    width: 40px;
+    height: 40px;
+    background-image: url(../../assets/img/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(90deg);
+    cursor: pointer;
+    background-color: #fff;
+    border: unset;
+    flex-shrink: 0;
+    position: absolute;
+    right: 0px;
+    border: 1px solid #bebebe;
+    border-radius: 4px 4px 0 0;
+}
+.m-combobox input:focus~button {
+    border: 1px solid transparent !important;
+    background-color: #bebebe;
+}
+
+.m-combobox .m-combobox-data {
+    /* display: none; */
+    position: absolute;
+    background-color: #fff;
+    /* border: 1px solid #bebebe; */
+    top: 41px;
+    width: 100%;
+    padding: 4px 0;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.356);
+    z-index: 999;
+}
+
+.m-combobox .m-combobox-data .m-combobox-item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 44px;
+    -webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+}
+
+.m-combobox .m-combobox-data .m-combobox-item:hover {
+    background-color: #bebebe;
+}
+
+.m-combobox .m-combobox-item.m-combobox-selected {
+    background-image: url(../../assets/img/check-64.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-color: #019160;
+    background-size: 24px 24px;
+    color: #fff
+}
+
+.m-combobox .m-combobox-item.m-combobox-selected:hover {
+    background-color: #019160;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}

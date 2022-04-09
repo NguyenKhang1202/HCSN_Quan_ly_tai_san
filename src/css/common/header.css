@@ -1,0 +1,43 @@
+@import url(../components/font.css);
+
+.header {
+    background-color: white;
+    float: left;
+    width: calc(100% - 225px);
+    height: 46px;
+    border-bottom: 2px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 21px;
+}
+    /* bank */
+    .header .header-left {
+        display: flex;
+        align-items: center;
+        height: 44px;
+    }
+
+        .header-left .header-title {
+            font-family: GoogleSans-Bold;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .header-left .header-title:hover {
+            cursor: pointer;
+        }
+
+    .header .header-right {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    .header-account {
+        padding-right: 15px;
+        background-image: url(../../assets/icon/down-arrow-solid.png);
+        background-repeat: no-repeat;
+        background-size: 10px 10px;
+        background-position: right center;
+        cursor: pointer;
+    }

@@ -1,0 +1,106 @@
+/* button default */
+.m-btn {
+    background-color: #1aa4c8;
+    font-size: 13px;
+    color: #ffffff;
+    padding: 11px 10px 10px 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, .16);
+    width: 110px;
+    height: 37px;
+    margin-right: 11px;
+}
+
+.m-btn:hover {
+    background-color: #30bde0;
+}
+
+.m-btn:active {
+    background-color: #1aa4c8;
+}
+/* 
+.m-btn-icon {
+    background-image: url(../../assets/icon/add.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 16px 16px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.150);
+    width: 37px;
+    height: 37px;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    cursor: pointer;
+} */
+
+.m-btn-header{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 24px 24px;
+    background-color: transparent;
+    border-radius: 3px;
+    width: 36px;
+    height: 36px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.m-btn-header:hover{
+    background-color: #bbbbbb65;
+}
+
+.m-btn-notify {
+    background-image: url(../../assets/icon/notify.png);
+}
+.m-btn-delete {
+    background-image: url(../../assets/icon/icon-delete.png);
+}
+
+.m-btn-menu {
+    background-image: url(../../assets/icon/menu.png);
+}
+
+.m-btn-excel {
+    background-image: url(../../assets/icon/excel.png);
+}
+.m-btn-excel:hover {
+    background-color: #bbbbbb65;
+}
+.m-btn-help {
+    background-image: url(../../assets/icon/help.png);
+}
+
+.m-btn-user {
+    background-image: url(../../assets/icon/user.png);
+}
+
+.m-btn-search {
+    background-image: url(../../assets/icon/search.png);
+}
+
+.m-btn-content-header {
+    width: 37px;
+    height: 37px;
+    padding: 11px;
+    margin-right: 12px;
+    border-radius: 3px;
+    border: 1px solid #BBBBBB;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    background-size: 16px 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .16);
+    overflow: hidden;
+}
+
+.m-btn-content-header:hover {
+    background-color: #bbbbbb65;
+    cursor: pointer;
+}
