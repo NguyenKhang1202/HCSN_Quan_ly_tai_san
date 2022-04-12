@@ -56,21 +56,21 @@
                 <i class="fas fa-check"></i>
               </div>
             </th>
-            <th fieldName="EmployeeCode">Mã nhân viên</th>
-            <th fieldName="EmployeeName" >Họ và tên</th>
-            <th style="width: 50px" fieldName="Gender">Giới tính</th>
-            <th class="text-align-center" fieldName="DateOfBirth">Ngày sinh</th>
-            <th fieldName="PhoneNumber">Số điện thoại</th>
-            <th fieldName="Email" >Email</th>
-            <th fieldName="DepartmentName" >Phòng ban</th>
+            <th>STT</th>
+            <th fieldName="EmployeeCode">Mã tài sản</th>
+            <th fieldName="EmployeeName" >Tên tài sản</th>
+            <th style="width: 50px" fieldName="Gender">Loại tài sản</th>
+            <th class="text-align-center" fieldName="DateOfBirth">HM/KH lũy kế</th>
+            <th fieldName="PhoneNumber">Số lượng</th>
+            <th fieldName="Email" >Nguyên giá</th>
+            <th fieldName="DepartmentName" >Bộ phận sử dụng</th>
             <th class="text-align-right" fieldName="Salary">
-              Mức lương cơ bản
+              Giá trị còn lại
             </th>
             <th class="text-align-center">Chức năng</th>
           </tr>
         </thead>
         <tbody v-show="!isShowLoading">
-          <!-- <router-view /> -->
             <tr
               @click="onClickRow($event, employee)"
               @dblclick="onDblclickRow()"
@@ -78,7 +78,7 @@
                 selectedRow:
                   this.employeeSelected.EmployeeId == employee.EmployeeId,
               }"
-              v-for="employee in employees"
+              v-for="(employee,index) in employees"
               :key="employee.EmployeeId"
             >
               <!-- <td><input type="checkbox" value="" /></td> -->
@@ -91,6 +91,7 @@
                   <i class="fas fa-check"></i>
                 </div>
               </td>
+              <td>{{ index+1 }}</td>
               <td>{{ employee.EmployeeCode }}</td>
               <td >{{ employee.EmployeeName }}</td>
               <td style="width: 50px">
@@ -118,9 +119,9 @@
               </td>
             </tr>
         </tbody>
-        <TheLoading v-show="isShowLoading" />
+        
       <div class="summary">
-        <p>Tổng số: <b>9</b> bản ghi</p>
+        <p>Tổng số: <b>{{employees.length}}</b> bản ghi</p>
         <SelectCustom @bind-ValueSelect="getValueSelect" />
         <div class="pagination">
                 <div class="pagination-back"></div>
@@ -138,35 +139,17 @@
               </div>
       </div>
       </table>
+      <TheLoading v-show="isShowLoading" />
     </div>
     <!-- end table -->
-    
-    <!-- <div class="paging-bar">
-      <div class="paging-left">Hiển thị 1-10/1000 nhân viên</div>
-      <div class="pagination">
-        <button class="btn-page firstpage-icon"></button>
-        <button class="btn-page prevpage-icon"></button>
-        <div class="pagination-number">
-          <button class="btn-pagenumber cur-active">1</button>
-          <button class="btn-pagenumber">2</button>
-          <button class="btn-pagenumber">3</button>
-          <button class="btn-pagenumber">4</button>
-        </div>
-        <button class="btn-page nextpage-icon"></button>
-        <button class="btn-page lastpage-icon"></button>
-      </div>
-      <div class="paging-right">10 nhân viên/trang</div>
-    </div> -->
+  
 
-    <!-- Form thêm mới hoặc cập nhật thông tin nhân viên -->
-    <employee-detail
+    <asset-detail
       :isShow="form.isShowForm"
-      :employee="employeeSelected"
-      :formMode="form.formMode"
       @closeForm="closeForm"
-      @handleSave="handleSave"
-      @validateForm="validateForm"
-    />
+      >
+    </asset-detail>
+
 
     <!-- Dialog xác nhận xóa hoặc cảnh báo -->
     <the-dialog
@@ -203,6 +186,8 @@ import Constant from "../../js/Common/Constant";
 import Enumeration from "../../js/Common/Enumeration";
 import ComboboxComponent from "../../components/base/Combobox.vue";
 import ComboboxFilter from "../../components/base/ComboboxFilter/ComboboxFilter";
+import AssetDetail from "./AssetDetail.vue";
+
 import $ from 'jquery'
 
 export default {
@@ -215,6 +200,7 @@ export default {
     ComboboxComponent,
     ComboboxFilter,
     SelectCustom,
+    AssetDetail,
   },
   props: [],
   data() {

@@ -43,6 +43,11 @@
             align-items: center;
             text-decoration: none;
             border-radius: 6px;
+            background-image: url(../../assets/icon/arrow-down-white.png);
+            background-size: 10px 10px;
+            background-repeat: no-repeat;
+            background-position-x: 180px;
+            background-position-y: center;
         }
         .navbar-box .menu-item:hover {
             background-color: #1aa5c85d;
@@ -92,6 +97,10 @@
                 color: white !important;
                 cursor: pointer;
                 transition: all 0.1s ease;
+                
+            }
+            .router-link-active {
+                background-image: url(../../assets/icon/arrow-up-white.png) !important;
             }
             .navbar-box a {
                 color: white !important;

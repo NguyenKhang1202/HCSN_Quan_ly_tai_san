@@ -10,12 +10,12 @@
 
 <script>
 /* eslint-disable */
-import TheEmployee from '../../views/Employee/Employee.vue'
+import TheAsset from '../../views/Assets/Asset.vue'
 
 export default {
     name: "TheContent",
     components: {
-      TheEmployee
+      TheAsset
     },
 
     data(){

@@ -104,7 +104,7 @@
 
 .content .wrap-content{
     position: relative;
-    height: calc(100vh - 126px);
+    height: calc(100vh - 156px);
     background-color: #ffffff;
     /* border: 1px solid #afafaf; */
     border-radius: 3.5px;
@@ -113,7 +113,10 @@
     overflow-y: scroll;
     margin-top: 11px;
 }
-    
+
+.wrap-content ::-webkit-scrollbar {
+    width: 4px;
+}
 /* .content .paging-bar {
     display: flex;
     justify-content: center;
@@ -189,7 +192,7 @@
     .content .summary {
         position: fixed;
         top: calc(100vh - 58px);
-        width: calc(100% - 272px);
+        width: calc(100% - 267px);
         display: flex;
         align-items: center;
         height: 40px;
@@ -198,6 +201,7 @@
         border-top: 1px solid #afafaf60;
         padding-left: 16px;
         border-radius: 0px 0px 3.5px 3.5px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 16%);
         gap: 20px;
     }
 

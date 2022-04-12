@@ -17,25 +17,21 @@
       </router-link>
       <router-link to="/report" class="menu-item">
       <div class="wrap-icon">
-
         <div class="menu-item-icon menu-icon-report"></div>
       </div>
         <div class="menu-item-text">Báo cáo</div>
       </router-link>
-
       <router-link to="/customer" class="menu-item">
       <div class="wrap-icon">
-
         <div class="menu-item-icon menu-icon-dashboard"></div>
       </div>
-        <div class="menu-item-text">Danh sách khách hàng</div>
+        <div class="menu-item-text">Tài sản</div>
       </router-link>
       <router-link to="/employee" class="menu-item">
         <div class="wrap-icon">
-
         <div class="menu-item-icon menu-icon-employee"></div>
       </div>
-        <div class="menu-item-text">Danh mục nhân viên</div>
+        <div class="menu-item-text">Tài sản HT-ĐB</div>
       </router-link>
       <router-link to="/setting" class="menu-item">
         <div class="wrap-icon">
@@ -43,12 +39,12 @@
         </div>
         <div class="menu-item-text">Thiết lập hệ thống</div>
       </router-link>
-      <!-- <div class="m-collapse-toggle"
+      <div class="m-collapse-toggle"
         @click="toggleNavbar"
         :class="{ toggled: isToggle}"    
         >
         <i class="fas fa-angle-left"></i>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -72,5 +68,6 @@ export default {
 };
 </script>
 
-<style></style>
->
+<style>
+</style>
+
