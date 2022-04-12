@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header" :class="{ shrink: isShrink}">
         <div class="header-left">
             <div class="header-title">Danh sách tài sản</div>
         </div>
@@ -23,7 +23,8 @@ export default {
     name: "TheHeader",
     components: {
         Select,
-    }
+    },
+    props: ["isShrink"],
 }
 </script>
 

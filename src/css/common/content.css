@@ -104,7 +104,7 @@
 
 .content .wrap-content{
     position: relative;
-    height: calc(100vh - 156px);
+    height: calc(100vh - 130px);
     background-color: #ffffff;
     /* border: 1px solid #afafaf; */
     border-radius: 3.5px;
@@ -114,85 +114,17 @@
     margin-top: 11px;
 }
 
-.wrap-content ::-webkit-scrollbar {
-    width: 4px;
+::-webkit-scrollbar {
+  height: 8px;              /* height of horizontal scrollbar ← You're missing this */
+  width: 8px;               /* width of vertical scrollbar */
+  border: 1px solid #d5d5d5;
 }
-/* .content .paging-bar {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: calc(100% - 226px);
-    height : 56px;
-    border-top: 2px solid #e9ebee;
-}
-    .paging-bar .paging-left {
-        position: absolute;
-        left: 0;
-        padding: 20px 16px 20px 22px;
-    }
-    .paging-bar .pagination {
-        display: flex;
-        width : 500px;
-    }
-        .pagination .pagination-number {
-            margin-top: 0px;
-        }
-        .pagination .btn-page {
-            background-size: contain;
-            background-repeat: no-repeat;
-            outline: none;
-            height: 32px;
-            width: 32px;
-            border-radius: 4px;
-            margin: 12px;
-            margin-top: 12px;
-            border-color:#e9ebee ;
-            border: none;
-        }
-        .pagination .btn-page:hover{
-            background-color: white;
-        }
-        
-        .pagination .btn-pagenumber{
-            color: black;   
-            float: left;
-            width: 32px;
-            height: 32px;
-            margin-top: 12px;
-            border-radius: 50%;
-            background-size: contain;
-            align-items: center;
-            border:1px solid #bbbbbb;
-            text-align: center;
-            margin-left: 8px;
-            margin-right: 8px;
-            cursor: pointer;
-            display: grid;
-            background-color: #e9ebee;
-        }
-        .pagination .btn-pagenumber:hover{
-            background-color: white;
-        }
-        .cur-active {
-            background-color: #019160 !important;
-            color: white !important;
-        }
-        .btn-pagenumber.cur-active:hover {
-            background-color: #019160;
-            color: white;
-        }
-    .paging-bar .paging-right {
-        position: absolute;
-        right: 0;
-        padding: 20px 16px;
-    } */
+
 
     .content .summary {
-        position: fixed;
-        top: calc(100vh - 58px);
-        width: calc(100% - 267px);
+        position: sticky;
+        bottom: 0px;
+        width: 100%;
         display: flex;
         align-items: center;
         height: 40px;

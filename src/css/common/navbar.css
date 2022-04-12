@@ -14,12 +14,15 @@
         padding: 0 4px 4px 4px;
         margin-bottom: 15px;
     }
-        /* logo icon */
-        .logo-box .toggle {
+        .toggle {
             height: 36px;
             width: 36px;
             background-size: contain;
             background-repeat: no-repeat;
+        }
+        /* logo icon */
+        .toggled {
+            width: 67px;
         }
 
         /* text cho logo */
@@ -88,8 +91,9 @@
             .navbar-box.toggle {
                 /* width: 60px; */
             }
-            .navbar-box.toggle .toggled {
+            .navbar-box .toggled {
                 transform: rotate(180deg);
+                transition: all 0.3 ease;
             }
 
             .router-link-active, .router-link-active:hover {

@@ -32,7 +32,7 @@ tbody tr {
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {

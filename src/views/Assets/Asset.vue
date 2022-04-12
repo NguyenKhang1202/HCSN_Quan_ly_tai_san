@@ -120,6 +120,7 @@
             </tr>
         </tbody>
         
+      </table>
       <div class="summary">
         <p>Tổng số: <b>{{employees.length}}</b> bản ghi</p>
         <SelectCustom @bind-ValueSelect="getValueSelect" />
@@ -138,7 +139,6 @@
                 <div class="refresh" @click="loadingData"></div>
               </div>
       </div>
-      </table>
       <TheLoading v-show="isShowLoading" />
     </div>
     <!-- end table -->

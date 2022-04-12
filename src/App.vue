@@ -1,8 +1,15 @@
 <template>
   <div>
-    <the-navbar />
-    <the-header />
-    <the-content />
+    <the-navbar 
+      @toggleShrinkNavbar="toggleShrinkNavbar"
+      :isShrink="isShrinkNavbar"
+      />
+    <the-header 
+      :isShrink="isShrinkNavbar"
+      />
+    <the-content 
+      :isShrink="isShrinkNavbar"
+      />
   </div>
 </template>
 
@@ -17,6 +24,19 @@ export default {
       TheContent,
       TheNavbar,
   },
+  data(){
+    return {
+      isShrinkNavbar: false,
+    }
+  },
+  watch() {
+  },
+  methods: {
+    toggleShrinkNavbar(){
+      let me = this;
+      me.isShrinkNavbar = !me.isShrinkNavbar;
+    }
+  }
 };
 </script>
 
@@ -27,4 +47,7 @@ export default {
 @import url('./css/common/navbar.css');
 @import url('./css/common/content.css');
 @import url('./css/page/employee.css');
+.shrink {
+  width: calc(100% - 67px);
+}
 </style>

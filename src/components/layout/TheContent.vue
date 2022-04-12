@@ -1,6 +1,8 @@
 <template>
   <!-- <the-employee></the-employee> -->
-  <router-view />
+  <router-view 
+    :class="{ shrinkContent: isShrink}"
+    />
 </template>
 
 <style>
@@ -23,7 +25,15 @@ export default {
       }
     },    
     methods: {
-      
-    }
+    },
+    props: ["isShrink"]
 }
-</script>>
+</script>
+
+<style>
+.shrinkContent {
+  left: 67px;
+  width: calc(100% - 67px);
+}
+</style>
+
