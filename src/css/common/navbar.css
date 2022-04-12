@@ -6,6 +6,7 @@
     color: white !important;
     border-right: 1px solid #e9ebee;
     padding: 11px;
+    transition: width 0.5s ease;
 }
     /* logo */
     .nav-bar .logo-box {

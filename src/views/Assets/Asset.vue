@@ -184,7 +184,6 @@ import DialogJS from "../../js/Components/Dialog.js";
 import Resource from "../../js/Common/Resource";
 import Constant from "../../js/Common/Constant";
 import Enumeration from "../../js/Common/Enumeration";
-import ComboboxComponent from "../../components/base/Combobox.vue";
 import ComboboxFilter from "../../components/base/ComboboxFilter/ComboboxFilter";
 import AssetDetail from "./AssetDetail.vue";
 
@@ -197,7 +196,6 @@ export default {
     TheDialog,
     TheToastMessage,
     TheLoading,
-    ComboboxComponent,
     ComboboxFilter,
     SelectCustom,
     AssetDetail,

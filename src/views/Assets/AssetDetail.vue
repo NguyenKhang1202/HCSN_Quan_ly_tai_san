@@ -21,11 +21,13 @@
             <div class="row">
                 <div>
                     <label for="">Mã bộ phận sử dụng <span class="m-label-red">*</span></label>
-                    <select class="width-small" name="" id="" placeholder="Tên bộ phận sử dụng">
-                        <option value="">Phòng kế toán</option>
-                        <option value="">Phòng CNTT</option>
-                        <option value="">Khác</option>
-                    </select>
+                    <combobox-component
+                    :items="departments"
+                    @bindDataForm="bindDataForm"
+                    :Require="true"
+                    @handleBlur="handleBlur"
+                    tabindex="5"
+                  />
                 </div>
                 <div>
                     <label for="DepartmentName">Tên bộ phận sử dụng </label>
@@ -35,11 +37,13 @@
             <div class="row">
                 <div>
                     <label for="">Mã loại tài sản <span class="m-label-red">*</span></label>
-                    <select class="width-small" name="" id="" placeholder="Mã loại tài sản">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
+                    <combobox-component
+                    :items="departments"
+                    @bindDataForm="bindDataForm"
+                    :Require="true"
+                    @handleBlur="handleBlur"
+                    tabindex="5"
+                  />
                 </div>
                 <div>
                     <label for="AssetTypeName">Tên loại tài sản</label>
@@ -94,11 +98,22 @@
 </template>
 
 <script>
+/* eslint-disable */
+import ComboboxComponent from "../../components/base/Combobox.vue";
+import CommonFn from "../../js/Common/Common.js";
+import Resource from "../../js/Common/Resource";
+import Constant from "../../js/Common/Constant";
+import Combobox from "../../js/Components/Combobox";
+import ValidateForm from "../../js/Validate/ValidateForm";
+import Enumeration from "../../js/Common/Enumeration";
 export default {
   name: "AssetDetail",
+  components: {
+    ComboboxComponent,
+  },
   data(){
       return {
-
+          departments: Combobox.getDepartment("EmployeeDetail"),
       }
   },
   props: {
