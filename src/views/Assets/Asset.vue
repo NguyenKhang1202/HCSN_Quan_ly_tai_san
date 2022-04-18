@@ -38,7 +38,7 @@
           <button
             @click="onClickDelete"
             class="m-btn-content-header m-btn-delete disabled tooltip"
-            v-bind:class="{ able: this.employeeSelected.EmployeeId != undefined }"
+            v-bind:class="{ able: this.assetSelected.fixed_asset_id != undefined }"
           >
             <span class="tooltiptext">Xóa</span>
           </button>  
@@ -57,72 +57,67 @@
               </div>
             </th>
             <th>STT</th>
-            <th fieldName="EmployeeCode">Mã tài sản</th>
-            <th fieldName="EmployeeName" >Tên tài sản</th>
-            <th style="width: 50px" fieldName="Gender">Loại tài sản</th>
-            <th class="text-align-center" fieldName="DateOfBirth">HM/KH lũy kế</th>
-            <th fieldName="PhoneNumber">Số lượng</th>
-            <th fieldName="Email" >Nguyên giá</th>
+            <th fieldName="assetCode">Mã tài sản</th>
+            <th fieldName="AssetName" >Tên tài sản</th>
+            <th style="width: 50px" fieldName="AssetCategory">Loại tài sản</th>
+            <th class="text-align-right" fieldName="">HM/KH lũy kế</th>
+            <th fieldName="Quantity" class="align-right">Số lượng</th>
+            <th fieldName="Cost" class="align-right">Nguyên giá</th>
             <th fieldName="DepartmentName" >Bộ phận sử dụng</th>
-            <th class="text-align-right" fieldName="Salary">
-              Giá trị còn lại
-            </th>
             <th class="text-align-center">Chức năng</th>
           </tr>
         </thead>
         <tbody v-show="!isShowLoading">
             <tr
-              @click="onClickRow($event, employee)"
+              @click="onClickRow($event, asset)"
               @dblclick="onDblclickRow()"
               v-bind:class="{
                 selectedRow:
-                  this.employeeSelected.EmployeeId == employee.EmployeeId,
+                  this.assetSelected.fixed_asset_id == asset.fixed_asset_id,
               }"
-              v-for="(employee,index) in employees"
-              :key="employee.EmployeeId"
+              v-for="(asset,index) in fixedAssets"
+              :key="asset.fixed_asset_id"
             >
-              <!-- <td><input type="checkbox" value="" /></td> -->
               <td>
                 <div ref="checkbox" class="m-checkbox" 
                   v-bind:class="{
                     checked:
-                      this.employeeSelected.EmployeeId == employee.EmployeeId,
+                      this.assetSelected.fixed_asset_id == asset.fixed_asset_id,
                   }">
                   <i class="fas fa-check"></i>
                 </div>
               </td>
-              <td>{{ index+1 }}</td>
-              <td>{{ employee.EmployeeCode }}</td>
-              <td >{{ employee.EmployeeName }}</td>
-              <td style="width: 50px">
-                {{ getValueEnum(employee.Gender, "Gender") }}
+              <td class="text-align-center">{{ index+1 }}</td>
+              <td>{{ asset.fixed_asset_code }}</td>
+              <td >{{ asset.fixed_asset_name }}</td>
+              <td >
+                {{ asset.fixed_asset_category_name }}
               </td>
-              <td class="align-center">
-                {{ formatDate(employee.DateOfBirth) }}
+              <td class="align-right">
+                {{ 0 }}
               </td>
-              <td>{{ employee.PhoneNumber }}</td>
-              <td >{{ employee.Email }}</td>
-              <!-- <td></td> -->
-              <td >{{ employee.DepartmentName }}</td>
-              <td class="align-right">{{ formatMoney(1000000) }}</td>
+              <td class="align-right">{{ asset.quantity }}</td>
+              <td class="align-right">{{ formatMoney(asset.cost) }}</td>
+              <td >{{ asset.department_name }}</td>
               <td class="text-align-center action feature">
                 <i
-                @click="rowOnClick(emp)"
+                @click="rowOnClick(asset)"
                 style="font-size: 17px; color: #138496; margin-right: 10px"
-                class="far fa-edit edit-form-employee"
+                class="far fa-edit edit-form-Asset"
               ></i>
               <i
-                v-on:click="deleteEmployee(emp)"
+                v-on:click="deleteAsset(asset)"
                 style="font-size: 17px; color: red"
                 class="text-align-center far fa-trash-alt btnDelete"
               ></i>
               </td>
             </tr>
+            <tr class="summary-table"></tr>
         </tbody>
         
       </table>
       <div class="summary">
-        <p>Tổng số: <b>{{employees.length}}</b> bản ghi</p>
+        <p>Tổng số: <b>{{fixedAssets.length}}</b> bản ghi</p>
         <SelectCustom @bind-ValueSelect="getValueSelect" />
         <div class="pagination">
                 <div class="pagination-back"></div>
@@ -142,14 +137,14 @@
       <TheLoading v-show="isShowLoading" />
     </div>
     <!-- end table -->
-  
 
     <asset-detail
-      :isShow="form.isShowForm"
+      :isShowForm="form.isShowForm"
+      :formMode="form.formMode"
+      :fixedAsset="assetSelected"
       @closeForm="closeForm"
-      >
-    </asset-detail>
-
+      @handleSave="handleSave"
+    />
 
     <!-- Dialog xác nhận xóa hoặc cảnh báo -->
     <the-dialog
@@ -157,7 +152,7 @@
       v-bind:title="dialog.title"
       v-bind:message="dialog.message"
       v-bind:isShowBtnCancel="dialog.isShowBtnCancel"
-      v-bind:employeeCode="dialog.employeeCode || ``"
+      v-bind:assetCode="dialog.assetCode || ``"
       @handleCloseDialog="handleCloseDialog"
       @handleConfirmDialog="handleConfirmDialog"
     />
@@ -174,7 +169,6 @@
 <script>
 /* eslint-disable */
 import SelectCustom from "../../components/base/SelectCustom/SelectCustom.vue";
-import EmployeeDetail from "./EmployeeDetail.vue";
 import TheLoading from "../../components/base/TheLoading.vue";
 import TheDialog from "../../components/base/TheDialog.vue";
 import TheToastMessage from "../../components/base/ToastMessage.vue";
@@ -186,13 +180,11 @@ import Constant from "../../js/Common/Constant";
 import Enumeration from "../../js/Common/Enumeration";
 import ComboboxFilter from "../../components/base/ComboboxFilter/ComboboxFilter";
 import AssetDetail from "./AssetDetail.vue";
-
-import $ from 'jquery'
+// import $ from 'jquery'
 
 export default {
-  name: "TheEmployee",
+  name: "TheAsset",
   components: {
-    EmployeeDetail,
     TheDialog,
     TheToastMessage,
     TheLoading,
@@ -207,11 +199,11 @@ export default {
         Phục vụ chung
         CreateBy : Nguyễn Văn Khang 30/3/2022
       */
-      employees: { type: Object, default: {} },
-      employeeSelected: {},
+      fixedAssets: { type: Object, default: {} },
+      assetSelected: {},
       isShowLoading: { type: Boolean, default: false },
 
-      // Phục vụ cho Form nhân viên
+      // Phục vụ cho Form asset
       form: {
         isShowForm: false,
         formMode: { type: Number, default: 0 },
@@ -220,6 +212,7 @@ export default {
       // Phục vụ cho Dialog
       dialog: {
         isShowDialog: false,
+        assetCode: "",
         title: "",
         message: "",
         isShowBtnCancel: false,
@@ -232,11 +225,11 @@ export default {
       },
 
       // Lấy dữ liệu từ server và build combobox
-      departments: Combobox.getDepartment("Employee"),
-      positions: Combobox.getPosition("Employee"),
+      departments: Combobox.getDepartment("Asset"),
+      positions: Combobox.getPosition("Asset"),
     };
   },
-
+  
   methods: {
     // Các hàm format 
     formatDate: CommonFn.formatDate,
@@ -251,7 +244,7 @@ export default {
         isShowForm: true,
         formMode: Enumeration.FormMode.Add,
       };
-      me.employee = {};
+      me.Asset = {};
     },
 
     // Đóng form detail
@@ -263,10 +256,16 @@ export default {
       };
     },
 
-    // Sự kiện select row
-    onClickRow(event, employeeSelected) {
+    // Sự kiện click btn Delete trên từng hàng
+    deleteAsset(Asset) {
       let me = this;
-      me.employeeSelected = employeeSelected;
+      me.assetSelected = Asset;
+      me.onClickDelete();
+    },
+    // Sự kiện select row
+    onClickRow(event, assetSelected) {
+      let me = this;
+      me.assetSelected = assetSelected;
     },
 
     // Sự kiện double select row
@@ -281,29 +280,29 @@ export default {
     // Sự kiện click button Delete
     onClickDelete() {
       let me = this;
-      if (me.employeeSelected.EmployeeCode != undefined) {
-        me.dialog = DialogJS.Delete(me.employeeSelected.EmployeeCode);
+      if (me.assetSelected.fixed_asset_code != undefined) {
+        me.dialog = DialogJS.Delete(me.assetSelected.fixed_asset_code);
       } else {
-        console.log("Chưa chọn employee nào");
+        console.log("Chưa chọn Asset nào");
       }
     },
 
     // Sự kiện click vào button Edit
     onClickEdit() {
       let me = this;
-      if (me.employeeSelected.EmployeeCode != undefined) {
+      if (me.assetSelected.fixed_asset_code != undefined) {
         me.onDblclickRow();
       } else {
-        console.log("Chưa chọn employee nào");
+        console.log("Chưa chọn Asset nào");
       }
     },
 
     // Lưu dữ liệu
-    handleSave(employeeForm) {
+    handleSave(assetsForm) {
       var me = this,
         method = null,
-        url = Constant.urlEmployee,
-        data = employeeForm,
+        url = Constant.urlAssets,
+        data = assetsForm,
         message = "";
 
       switch (me.form.formMode) {
@@ -314,14 +313,14 @@ export default {
         case Enumeration.FormMode.Edit:
           method = Resource.Method.Put;
           message = Resource.Toast.Edit;
-          url = `${url}/${employeeForm.EmployeeId}`;
+          url = `${url}/${assetsForm.fixed_asset_id}`;
           break;
       }
       // call axios
       CommonFn.Axios(method, url, data, function (response) {
         if (response != null) {
           // Load lại dữ liệu table
-          me.loadingEmployees();
+          me.loadingAssets();
 
           // Đóng Form
           me.closeForm();
@@ -348,11 +347,11 @@ export default {
       if (me.dialog.isShowBtnCancel == false) {
         me.handleCloseDialog();
       } else {
-        url = `${Constant.urlEmployee}/${me.employeeSelected.EmployeeId}`;
+        url = `${Constant.urlAssets}/${me.assetSelected.fixed_asset_id}`;
         // call axios delete
         CommonFn.Axios(Resource.Method.Delete, url, {}, function (response) {
           console.log(response);
-          me.loadingEmployees();
+          me.loadingAssets();
           me.showToast(Resource.Toast.Delete);
         });
       }
@@ -365,7 +364,6 @@ export default {
       let me = this;
       me.dialog = {
         isShowDialog: false,
-        //employeeCode: null,
         isShowBtnCancel: false,
         title: "",
         message: "",
@@ -395,10 +393,10 @@ export default {
     },
 
     // Hàm load lại dữ liệu trên table
-    loadingEmployees() {
+    loadingAssets() {
       let me = this,
         method = Resource.Method.Get,
-        url = Constant.urlEmployee,
+        url = Constant.urlAssets,
         data = {};
 
       // hiện image loading
@@ -407,11 +405,11 @@ export default {
       // call axios lấy dữ liệu
       CommonFn.Axios(method, url, data, function (response) {
         // load dữ liệu vào bảng
-        me.employees = response.data;
+        me.fixedAssets = response.data;
       });
 
       // Reset lại item được chọn
-      me.employeeSelected = {};
+      me.assetSelected = {};
       setTimeout(() => {
         me.isShowLoading = false;
       }, 300);
@@ -436,7 +434,7 @@ export default {
     console.log("Created");
     let me = this;
     // Tải dữ liệu lên bảng
-    me.loadingEmployees();
+    me.loadingAssets();
   },
 };
 </script>
@@ -471,4 +469,6 @@ export default {
 .refresh-text {
   margin-left: -100px;
 }
+
+
 </style>

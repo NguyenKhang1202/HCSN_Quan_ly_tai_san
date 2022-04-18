@@ -3,10 +3,10 @@
 // Các hàm dùng chung toàn chương trình
 var DialogJS = DialogJS || {};
 
-DialogJS.Delete = (employeeCode) => {
+DialogJS.Delete = (assetCode) => {
     return {
-        title: "XÓA NHÂN VIÊN",
-        message: `Bạn có chắc chắn muốn xóa nhân viên ${employeeCode}?`,
+        title: "XÓA TÀI SẢN",
+        message: `Bạn có chắc chắn muốn xóa tài sản ${assetCode}?`,
         isShowBtnCancel: true,
         isShowDialog: true,
     }

@@ -1,5 +1,4 @@
 <template>
-  <!-- <the-employee></the-employee> -->
   <router-view 
     :class="{ shrinkContent: isShrink}"
     />
@@ -12,12 +11,10 @@
 
 <script>
 /* eslint-disable */
-import TheAsset from '../../views/Assets/Asset.vue'
 
 export default {
     name: "TheContent",
     components: {
-      TheAsset
     },
 
     data(){

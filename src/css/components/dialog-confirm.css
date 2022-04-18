@@ -49,7 +49,10 @@
 }
 
 .m-btn-ok {
-    margin: 0 12px;
+    margin: 0 8px;
+}
+.m-btn-cancel {
+    margin-right: 0;
 }
 
 .m-dialog-box.visible {

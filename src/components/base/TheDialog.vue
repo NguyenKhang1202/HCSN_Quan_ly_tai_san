@@ -4,11 +4,11 @@
             <div class="m-dialog-close"></div>
             <div class="m-dialog-header">{{title}}</div>
             <div class="m-dialog-body">
-                {{message}}{{employeeCode}}
+                {{message}}{{assetCode}}
             </div>
             <div class="m-dialog-footer">
-                <button id="btn-cancel" v-show="isShowBtnCancel" @click="handleCancel" class="m-btn m-btn-cancel">Hủy bỏ</button>
-                <button id="btn-delete-confirm" @click="handleConfirm" class="m-btn m-btn-ok" :class="{'style-delete': isShowBtnCancel,hidden: !isShowDialog}">Đồng ý</button>
+                <button v-show="isShowBtnCancel" @click="handleCancel" class="m-btn m-btn-cancel">Hủy bỏ</button>
+                <button @click="handleConfirm" class="m-btn m-btn-ok" :class="{'style-delete': isShowBtnCancel,hidden: !isShowDialog}">Đồng ý</button>
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
 <script>
 export default {
     name: "TheDialog",
-    props: ["isShowDialog","employeeCode","message","title","isShowBtnCancel"],
+    props: ["isShowDialog","assetCode","message","title","isShowBtnCancel"],
     data(){
         return{
         }

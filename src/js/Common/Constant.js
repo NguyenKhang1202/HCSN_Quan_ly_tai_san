@@ -2,9 +2,9 @@
 var Constant = Constant || {};
 
 // Domain trong môi trường develop
-Constant.UrlPrefix = "http://amis.manhnv.net";
+Constant.UrlPrefix = "http://localhost:5000";
 
-Constant.urlEmployee = `http://amis.manhnv.net/api/v1/Employees`;
-Constant.urlNewEmployeeCode = `http://amis.manhnv.net/api/v1/Employees/NewEmployeeCode`;
+Constant.urlAssets = `http://localhost:5000/api/v1/FixedAssets`;
+Constant.urlNewAssetCode = `http://localhost:5000/api/v1/FixedAssets/NewfixedAssetCode`;
 
 export default Constant;

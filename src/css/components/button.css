@@ -21,22 +21,6 @@
 .m-btn:active {
     background-color: #1aa4c8;
 }
-/* 
-.m-btn-icon {
-    background-image: url(../../assets/icon/add.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 16px 16px;
-    background-color: #ffffff;
-    border-radius: 3px;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.150);
-    width: 37px;
-    height: 37px;
-    overflow: hidden;
-    outline: none;
-    border: none;
-    cursor: pointer;
-} */
 
 .m-btn-header{
     background-repeat: no-repeat;

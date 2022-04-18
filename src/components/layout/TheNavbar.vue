@@ -29,7 +29,7 @@
       </div>
         <div class="menu-item-text" :class="{'shrink-navbar': isShrink}">Tài sản</div>
       </router-link>
-      <router-link to="/employee" class="menu-item">
+      <router-link to="/assets" class="menu-item">
         <div class="wrap-icon">
         <div class="menu-item-icon menu-icon-employee"></div>
       </div>

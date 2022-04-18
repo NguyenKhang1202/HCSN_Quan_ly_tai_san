@@ -117,6 +117,7 @@
 
 .m-btn-save {
     background-color: #1aa4c8;
+    margin-left: 8px;
 }
 
 .content-bottom .m-btn-cancel {
@@ -126,6 +127,7 @@
 }
 
 .content-bottom .m-btn-cancel:hover {
-    background-color: #ffffff;
+    background-color: #bebebe62;
     opacity: 1;
+    
 }
