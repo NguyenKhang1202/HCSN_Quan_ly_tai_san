@@ -1,0 +1,13 @@
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.deps.json
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.dll
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.pdb
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.dll
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.pdb
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.AssemblyReference.cache
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.AssemblyInfoInputs.cache
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.AssemblyInfo.cs
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.CoreCompileInputs.cache
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.CopyComplete
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.dll
+F:\File-Project\Visual studio 2019\MVC\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.pdb

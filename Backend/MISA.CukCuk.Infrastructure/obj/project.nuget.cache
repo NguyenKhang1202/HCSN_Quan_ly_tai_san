@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "OdjkxIf+Gn/W7M2t+YjJvJja0IXxRLFWUDshZmBeTYCBLyJ3WVbzEzG7BlK3XYcSDnwMPcV4WBYWvuDFESvzAA==",
+  "success": true,
+  "projectFilePath": "F:\\File-Project\\Visual studio 2019\\MVC\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\mysqlconnector\\2.1.8\\mysqlconnector.2.1.8.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
